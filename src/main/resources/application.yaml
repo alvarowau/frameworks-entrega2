@@ -1,3 +1,6 @@
 spring:
   application:
     name: entrega2
+
+server:
+  port: 9000
