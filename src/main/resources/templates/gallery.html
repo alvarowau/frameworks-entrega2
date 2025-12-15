@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Galería de imágenes</title>
+
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/gallery.css}">
+</head>
+<body>
+
+<main>
+
+    <h1>Galería de imágenes</h1>
+
+    <p class="intro">
+        A continuación se muestran imágenes de las figuras geométricas utilizadas
+        en el cálculo de áreas.
+    </p>
+
+    <div class="gallery">
+
+        <div class="card">
+            <h2>Rectángulo</h2>
+            <img th:src="@{/images/rectangle.png}" alt="Rectángulo" width="280"/>
+        </div>
+
+        <div class="card">
+            <h2>Triángulo equilátero</h2>
+            <img th:src="@{/images/triangle_equilateral.png}" alt="Triángulo equilátero" width="280"/>
+        </div>
+
+        <div class="card">
+            <h2>Triángulo isósceles</h2>
+            <img th:src="@{/images/triangle_isosceles.png}" alt="Triángulo isósceles" width="280"/>
+        </div>
+
+        <div class="card">
+            <h2>Triángulo escaleno</h2>
+            <img th:src="@{/images/triangle_scalene.png}" alt="Triángulo escaleno" width="280"/>
+        </div>
+
+    </div>
+
+    <p class="back">
+        <a th:href="@{/}">← Volver al índice</a>
+    </p>
+
+</main>
+
+</body>
+</html>

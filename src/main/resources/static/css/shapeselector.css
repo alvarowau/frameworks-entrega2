@@ -1,0 +1,40 @@
+form {
+    margin: 20px auto;
+    text-align: center;
+}
+
+form label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+form input,
+form select {
+    padding: 8px;
+    width: 220px;
+    margin-bottom: 12px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+hr {
+    margin: 40px 0;
+}
+
+/* Tarjetas de sección */
+.section {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Volver */
+.back {
+    text-align: center;
+    margin-top: 40px;
+}

@@ -1,0 +1,40 @@
+.intro {
+    text-align: center;
+    font-size: 1.05em;
+    margin-bottom: 30px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu li a {
+    font-size: 1.2em;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.menu li a:hover {
+    background-color: #eef1f5;
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+footer a {
+    color: #2c7be5;
+}

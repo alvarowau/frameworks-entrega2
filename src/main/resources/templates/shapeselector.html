@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Selector de figuras</title>
+
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/shapeselector.css}">
+</head>
+<body>
+
+<main>
+
+    <h1>Selector de figura geométrica</h1>
+
+    <!-- SELECCIÓN DE FIGURA -->
+    <form th:action="@{/area}" method="get">
+        <label for="shape">Selecciona una figura:</label>
+
+        <select name="shape" id="shape">
+            <option value="">-- Selecciona --</option>
+            <option value="rectangle" th:selected="${shape == 'rectangle'}">
+                Rectángulo
+            </option>
+            <option value="triangle" th:selected="${shape == 'triangle'}">
+                Triángulo
+            </option>
+        </select>
+
+        <button type="submit">Continuar</button>
+    </form>
+
+    <hr/>
+
+    <!-- RECTÁNGULO -->
+    <div class="section" th:if="${shape == 'rectangle'}">
+        <h2>Cálculo del área de un rectángulo</h2>
+
+        <img th:src="@{/images/rectangle.png}" alt="Rectángulo" width="300"/>
+
+        <form th:action="@{/area/rectangle}" method="post">
+            <label for="base">Base:</label>
+            <input type="number" name="base" id="base" step="any" required>
+
+            <label for="height">Altura:</label>
+            <input type="number" name="height" id="height" step="any" required>
+
+            <button type="submit">Calcular área</button>
+        </form>
+    </div>
+
+    <!-- SELECCIÓN TIPO TRIÁNGULO -->
+    <div class="section" th:if="${shape == 'triangle'}">
+        <h2>Selección de tipo de triángulo</h2>
+
+        <form th:action="@{/area}" method="get">
+            <input type="hidden" name="shape" value="triangle">
+
+            <label for="type">Tipo de triángulo:</label>
+
+            <select name="type" id="type">
+                <option value="">-- Selecciona --</option>
+                <option value="equilateral" th:selected="${type == 'equilateral'}">Equilátero</option>
+                <option value="isosceles" th:selected="${type == 'isosceles'}">Isósceles</option>
+                <option value="scalene" th:selected="${type == 'scalene'}">Escaleno</option>
+            </select>
+
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+
+    <!-- TRIÁNGULO EQUILÁTERO -->
+    <div class="section" th:if="${shape == 'triangle' and type == 'equilateral'}">
+        <h2>Triángulo equilátero</h2>
+
+        <img th:src="@{/images/triangle_equilateral.png}" alt="Triángulo equilátero" width="300"/>
+
+        <form th:action="@{/area/triangle/equilateral}" method="post">
+            <label for="side">Lado:</label>
+            <input type="number" name="side" id="side" step="any" required>
+
+            <button type="submit">Calcular área</button>
+        </form>
+    </div>
+
+    <!-- TRIÁNGULO ISÓSCELES -->
+    <div class="section" th:if="${shape == 'triangle' and type == 'isosceles'}">
+        <h2>Triángulo isósceles</h2>
+
+        <img th:src="@{/images/triangle_isosceles.png}" alt="Triángulo isósceles" width="300"/>
+
+        <form th:action="@{/area/triangle/isosceles}" method="post">
+            <label for="baseIso">Base:</label>
+            <input type="number" name="base" id="baseIso" step="any" required>
+
+            <label for="sideIso">Lado:</label>
+            <input type="number" name="side" id="sideIso" step="any" required>
+
+            <button type="submit">Calcular área</button>
+        </form>
+    </div>
+
+    <!-- TRIÁNGULO ESCALENO -->
+    <div class="section" th:if="${shape == 'triangle' and type == 'scalene'}">
+        <h2>Triángulo escaleno</h2>
+
+        <img th:src="@{/images/triangle_scalene.png}" alt="Triángulo escaleno" width="300"/>
+
+        <form th:action="@{/area/triangle/scalene}" method="post">
+            <label for="sideA">Lado A:</label>
+            <input type="number" name="sideA" id="sideA" step="any" required>
+
+            <label for="sideB">Lado B:</label>
+            <input type="number" name="sideB" id="sideB" step="any" required>
+
+            <label for="sideC">Lado C:</label>
+            <input type="number" name="sideC" id="sideC" step="any" required>
+
+            <button type="submit">Calcular área</button>
+        </form>
+    </div>
+
+    <p class="back">
+        <a th:href="@{/}">← Volver al índice</a>
+    </p>
+
+</main>
+
+</body>
+</html>

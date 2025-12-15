@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrega 2 - Cálculo de Áreas</title>
+
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+
+<main>
+
+    <h1>Entrega 2 – Cálculo de Áreas</h1>
+
+    <p class="intro">
+        Esta aplicación permite calcular el área de distintas figuras geométricas
+        y acceder a recursos relacionados con el cálculo de áreas.
+    </p>
+
+    <ul class="menu">
+        <li th:each="link : ${links}">
+            <a th:href="${link.url}"
+               th:text="${link.label}"
+               th:attr="target=${link.external} ? '_blank' : null">
+            </a>
+        </li>
+    </ul>
+
+    <footer>
+        <p>
+            Desarrollado por <strong>Álvaro</strong>
+        </p>
+        <p>
+            <a href="https://github.com/alvarowau/entrega2" target="_blank">
+                GitHub · AlvaroWau
+            </a>
+        </p>
+    </footer>
+
+</main>
+
+</body>
+</html>

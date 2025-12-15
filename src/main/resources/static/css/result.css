@@ -1,0 +1,49 @@
+.card {
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #f9fafc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin-bottom: 6px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.area {
+    text-align: center;
+}
+
+.area strong {
+    font-size: 2em;
+    color: #2c7be5;
+    display: block;
+    margin: 20px 0;
+}
+
+.area strong::after {
+    content: " u²";
+    font-size: 0.6em;
+    color: #555;
+}
+
+
+.formula {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.back {
+    text-align: center;
+    margin-top: 30px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Resultado - ' + ${figure.name}">Resultado</title>
+
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{/css/result.css}">
+</head>
+<body>
+
+<main>
+
+    <h1 th:text="'Resultado del cálculo: ' + ${figure.name}"></h1>
+
+    <img th:src="@{${figure.imagePath}}"
+         th:alt="${figure.name}"
+         width="300"/>
+
+    <section class="card">
+
+        <h2>Datos introducidos</h2>
+
+        <ul>
+            <li th:each="entry : ${figure.parameters}">
+                <strong th:text="${entry.key} + ':'"></strong>
+                <span th:text="${entry.value}"></span>
+            </li>
+        </ul>
+
+        <h2>Área calculada</h2>
+
+        <p class="area">
+            <strong th:text="${figure.calculateArea()}"></strong>
+        </p>
+
+        <p class="formula">
+            <a th:href="${figure.formulaUrl}" target="_blank">
+                Ver explicación y fórmula en Wikipedia
+            </a>
+        </p>
+
+    </section>
+
+    <p class="back">
+        <a th:href="@{/}">← Volver al índice</a>
+    </p>
+
+</main>
+
+</body>
+</html>
